@@ -272,6 +272,6 @@ provider "google" {
  zone    = var.zone
 }
 
-## Deep learning of Terraform
 ```
+## Deep learning of Terraform
 
