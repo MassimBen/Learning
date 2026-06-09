@@ -275,3 +275,9 @@ provider "google" {
 ```
 ## Deep learning of Terraform
 
+### Initialize Terraform configuration
+
+You create you main.tf now you need to initialize you terraforme workflow, you excute terraform init. Terraform dowloads all configuration you need for the provider you use. You can excute again terraform init to update configuration for modification or not. the file .teraform.lock.hcl wil create or modify if some modification happen. This file contain all configuration you use. Maybe use different file like main.tf or varaibles.tf or terraform.tf
+
+terraform.tf defines the terraform block, which defines the providers, remote backend, and the Terraform version(s) to be used with this configuration.
+
