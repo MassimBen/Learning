@@ -187,3 +187,9 @@ docker build -t mon-app .
 # Lancer le conteneur à partir de cette image
 docker run -p 3000:3000 mon-app
 ```
+```
+# commit a new layer to exist layer
+docker container commit -m "Add node" base-container node-base
+```
+
+Layer it's diffrentes thing you put to create image you for example app source, app dependencie, installation of python depenendicies.
