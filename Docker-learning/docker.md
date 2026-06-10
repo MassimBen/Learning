@@ -155,6 +155,16 @@ docker compose logs -f
 docker compose down
 ```
 
+# Architure of Docker file
+
+- Determine your base image
+  
+-Install application dependencies
+
+-Copy in any relevant source code and/or binaries
+
+-Configure the final image
+
 ## Example Dockerfile
 
 ```
