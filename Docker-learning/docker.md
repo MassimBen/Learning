@@ -123,3 +123,18 @@ Image in docker can several layers for build it for dowload he dowload all layer
 docker tag name/dcker name/docker:1.0 : rename the docker image
 docker push name/docker:1.0 : to push to docker hub repository
 ```
+# Volume command
+
+```
+# Lister tous les volumes présents sur votre machine
+docker volume ls
+
+# Voir les détails techniques d'un volume (et voir où il est stocké sur l'hôte)
+docker volume inspect nom_du_volume
+
+# Supprimer un volume spécifique (Attention : supprime définitivement les données !)
+docker volume rm nom_du_volume
+
+# Nettoyer tous les volumes qui ne sont plus branchés à aucun conteneur
+docker volume prune
+```
