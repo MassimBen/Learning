@@ -154,3 +154,36 @@ docker compose logs -f
 # Tout arrêter et nettoyer les conteneurs
 docker compose down
 ```
+
+## Example Dockerfile
+
+```
+# 1. On part d'une image existante (légère)
+FROM node:18-alpine
+
+# 2. On crée et on se place dans le dossier de l'app dans le conteneur
+WORKDIR /app
+
+# 3. On copie les fichiers de configuration des dépendances
+COPY package*.json ./
+
+# 4. On installe les dépendances
+RUN npm install
+
+# 5. On copie le reste du code source de l'application
+COPY . .
+
+# 6. On expose le port de notre application
+EXPOSE 3000
+
+# 7. La commande exécutée au démarrage du conteneur
+CMD ["npm", "start"]
+```
+
+```
+# Construire l'image et lui donner le nom "mon-app"
+docker build -t mon-app .
+
+# Lancer le conteneur à partir de cette image
+docker run -p 3000:3000 mon-app
+```
