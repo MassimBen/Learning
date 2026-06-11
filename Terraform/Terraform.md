@@ -65,7 +65,7 @@ The GCP provider automatically uses these credentials to authenticate against th
 
 #### Initialize the directory
 
-You need to run terraform init, to dowlaods all element for the provider you speficie in main.tf, he create in the directory a hidden subdirectory the are .terraform file. Terraform also creates a lock file named .terraform.lock.hcl, which specifies the exact provider versions used to ensure that every Terraform run is consistent. This also allows you to control when you want to upgrade the providers used in your configuration.
+You need to run terraform init, to dowlaods all element for the provider you speficie in terraform.tf, he create in the directory a hidden subdirectory the are .terraform file. Terraform also creates a lock file named .terraform.lock.hcl, which specifies the exact provider versions used to ensure that every Terraform run is consistent. This also allows you to control when you want to upgrade the providers used in your configuration.
 
 #### Format and validate the configuration
 We recommend using consistent formatting in all of your configuration files. The terraform fmt command automatically updates configurations in the current directory for readability and consistency.
@@ -285,7 +285,8 @@ You create you main.tf now you need to initialize you terraforme workfspace, you
 
 terraform.tf defines the terraform block, which defines the providers, remote backend, and the Terraform version(s) to be used with this configuration.
 You use it to define the configuration of provider you put all element you need to define a provider.
-
+.
++++++++++++++++++++++++++++++++++++++++++++
 main.tf use it to define ressource you want to create in the provider.
 
 .terraform it's file you not see it but is in your machine you use to install all plugin or dependance you use to connect with provider.
