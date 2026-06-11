@@ -43,7 +43,7 @@ resource "google_compute_network" "vpc_network" {
 ```
 The ressource you create depend what you want to use in your infrastructure.
 
-After configuration the main.tf with all element (terraform block, provider and ressource), now we need to authenticate in our googgle cloud account.
+After configuration the main.tf the ressource you will use, now we need to authenticate in our googgle cloud account.
 
 #### Authenticate to Google cloud
 
