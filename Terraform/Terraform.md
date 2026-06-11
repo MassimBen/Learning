@@ -289,3 +289,9 @@ main.tf use it to define ressource you want to create in the provider.
 
 .terraform it's file you not see it but is in your machine you use to install all plugin or dependance you use to connect with provider.
 
+### Create a Terraform plan
+You can use terraform plan to view the change in your ressource and make sur it's ok before apply ( when you have + it's good). You can save your plan with this command.
+```
+terraform plan -out "tfplan"
+```
+
