@@ -299,3 +299,11 @@ terraform plan -out "tfplan"
 terraform show -json "tfplan" | jq > tfplan.json
 ```
 
+### Apply Terraform configuration
+
+In this section you learn more about terraform apply. You use to apply your configuration in the providers you choose. But sometime they are error in the execution and terraform apply don't finish to build or modify your infra. You need to fix it and execute again a terraform apply. You replace a ressource you use terraform state list to view the ressources.
+
+Use the -replace argument when a resource has become unhealthy or stops working in ways that are outside of Terraform's control.
+
+
+
