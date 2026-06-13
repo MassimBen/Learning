@@ -401,7 +401,25 @@ tolist([
 
  var.private_subnet_cidr_blocks[1]
 "10.0.102.0/24"
+
+module "vpc" {
+   source  = "terraform-aws-modules/vpc/aws"
+   version = "5.7.0"
+
+   cidr = var.vpc_cidr_block
+
+   azs             = data.aws_availability_zones.available.names
+  private_subnets = ["10.0.101.0/24", "10.0.102.0/24"]
+  public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+  private_subnets = slice(var.private_subnet_cidr_blocks, 0, var.private_subnet_count)
+  public_subnets  = slice(var.public_subnet_cidr_blocks, 0, var.public_subnet_count)
+   ## ...
+ }
+
+use exit to leave the terraform consol
 ```
+
+You can use map than list, map it's like a dictionnaire in python 
 
 
 
