@@ -421,6 +421,23 @@ use exit to leave the terraform consol
 
 You can use map than list, map it's like a dictionnaire in python 
 
+```
+variable "resource_tags" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default     = {
+    project     = "project-alpha",
+    environment = "dev"
+  }
+}
+
+  tags = {
+    project     = "project-alpha",
+    environment = "dev"
+  }
+  tags = var.resource_tags
+```
+Like list you can access to value in terraform consol, in this case use a key.
 
 
 
