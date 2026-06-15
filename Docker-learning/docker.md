@@ -123,6 +123,19 @@ Image in docker can several layers for build it for dowload he dowload all layer
 docker tag name/dcker name/docker:1.0 : rename the docker image
 docker push name/docker:1.0 : to push to docker hub repository
 ```
+
+## Image 
+
+```
+# List all images
+docker images
+
+# Remove specific image
+docker rmi taxi_ingest:v001
+
+# Remove all unused images
+docker image prune -a
+```
 ## Volume command
 
 ```
@@ -136,6 +149,18 @@ docker volume inspect nom_du_volume
 docker volume rm nom_du_volume
 
 # Nettoyer tous les volumes qui ne sont plus branchés à aucun conteneur
+docker volume prune
+
+# Example
+
+# List volumes
+docker volume ls
+
+# Remove specific volumes
+docker volume rm ny_taxi_postgres_data
+docker volume rm pgadmin_data
+
+# Remove all unused volumes
 docker volume prune
 ```
 
@@ -153,6 +178,17 @@ docker compose logs -f
 
 # Tout arrêter et nettoyer les conteneurs
 docker compose down
+
+# Example
+
+# List all containers
+docker ps -a
+
+# Remove specific container
+docker rm <container_id>
+
+# Remove all stopped containers
+docker container prune
 ```
 
 # Architure of Docker file
