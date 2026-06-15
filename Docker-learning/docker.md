@@ -190,7 +190,29 @@ docker rm <container_id>
 # Remove all stopped containers
 docker container prune
 ```
+## Remove Docker Networks
+```
+# List networks
+docker network ls
 
+# Remove specific network
+docker network rm pg-network
+
+# Remove all unused networks
+docker network prune
+```
+
+```
+Clean Up Local Files
+# Remove parquet files
+rm *.parquet
+
+# Remove Python cache
+rm -rf __pycache__ .pytest_cache
+
+# Remove virtual environment (if using venv)
+rm -rf .venv
+```
 # Architure of Docker file
 
 - Determine your base image
