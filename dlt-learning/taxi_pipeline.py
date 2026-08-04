@@ -14,12 +14,7 @@ def taxi_pipeline_source():
     config: RESTAPIConfig = {
         "client": {
             "base_url": BASE_URL,
-            "paginator": {
-                "type": "page_number",
-                "page_param": "page",
-                "base_page": 1,
-                "stop_after_empty_page": True,
-            },
+            "paginator": "auto",
         },
         "resource_defaults": {
             "endpoint": {
@@ -33,9 +28,6 @@ def taxi_pipeline_source():
                 "name": "taxi_trips",
                 "endpoint": {
                     "path": "",
-                    "params": {
-                        "page": 1,
-                    },
                 },
             }
         ],
@@ -47,6 +39,7 @@ def taxi_pipeline_source():
 pipeline = dlt.pipeline(
     pipeline_name="taxi_pipeline",
     destination="duckdb",
+    dataset_name="main",
     refresh="drop_sources",
     progress="log",
 )
@@ -54,4 +47,13 @@ pipeline = dlt.pipeline(
 
 if __name__ == "__main__":
     load_info = pipeline.run(taxi_pipeline_source())
-    print(load_info)  # noqa: T201
+    print(load_info)
+
+    if load_info.loads_ids:
+        print(f"\n✅ Pipeline réussi — {len(load_info.loads_ids)} package(s) chargé(s)")
+        with pipeline.sql_client() as client:
+            with client.execute_query("SELECT count(*) FROM taxi_trips") as cur:
+                count = cur.fetchone()[0]
+                print(f"📊 Lignes chargées dans taxi_trips : {count}")
+    else:
+        print("\n❌ Aucune donnée chargée")
