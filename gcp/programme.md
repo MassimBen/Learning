@@ -1,8 +1,6 @@
 Voici le programme complet en format Markdown détaillé, prêt à être copié dans un fichier ou une application de prise de notes.
 
 ---
-
-```markdown
 # 🗺️ ROADMAP DATA ENGINEERING & DEVOPS GCP + AI DEV TOOLS
 
 > **Format :** Lundi, Mardi, Samedi, Dimanche uniquement
